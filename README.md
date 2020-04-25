@@ -3,6 +3,8 @@
 
 `sudo apt-get install zlib1g zlib1g-dev libexpat1-dev libpng-dev libgd-dev build-essential git software-properties-common python make`
 #####
+`sudo apt install npm`
+#####
 `sudo npm install -g yarn`
 #####
 `sudo apt-get install ant openjdk-8-jdk`
