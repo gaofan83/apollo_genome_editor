@@ -10,6 +10,7 @@
 `sudo apt-get install ant openjdk-8-jdk`
 #####
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/  # or set in .bashrc / .profile / .zshrc
+#####
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8` # OR
 
 sudo apt-get install ant openjdk-8-jdk 
