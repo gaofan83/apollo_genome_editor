@@ -18,9 +18,13 @@ sudo apt-get install ant openjdk-8-jdk
 # in .bashrc file, add the following line:
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 
+#####
 cd ~/software
+#####
 wget https://github.com/GMOD/Apollo/archive/2.5.0.tar.gz
+#####
 tar -xvzf 2.5.0.tar.gz
+#####
 cd Apollo-2.5.0
 
 # following command to test apollo
