@@ -16,35 +16,38 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8` # OR
 sudo apt-get install ant openjdk-8-jdk 
 
 # in .bashrc file, add the following line:
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+`export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/`
 
 #####
-cd ~/software
+`cd ~/software`
 #####
-wget https://github.com/GMOD/Apollo/archive/2.5.0.tar.gz
+`wget https://github.com/GMOD/Apollo/archive/2.5.0.tar.gz`
 #####
-tar -xvzf 2.5.0.tar.gz
+`tar -xvzf 2.5.0.tar.gz`
 #####
-cd Apollo-2.5.0
+`cd Apollo-2.5.0`
 
 # following command to test apollo
-./apollo run-local
+`./apollo run-local`
 
-#install PostgreSQL
-sudo apt install postgresql postgresql-contrib
-#test installation
-sudo -u postgres psql -c "SELECT version();"
+# install PostgreSQL
 
-#create postgres ID: database_user and PASSWD: database_user
-sudo su postgres -c "createuser -RDIElPS database_user"
+#####
+`sudo apt install postgresql postgresql-contrib`
 
-sudo su postgres -c "createdb -E UTF-8 -O database_user apollo-production"
+# test installation
+`sudo -u postgres psql -c "SELECT version();"`
 
-#edit sample-postgres-apollo-config.groovy with postgres ID and PASSWD
+# create postgres ID: database_user and PASSWD: database_user
+`sudo su postgres -c "createuser -RDIElPS database_user"`
+#####
+`sudo su postgres -c "createdb -E UTF-8 -O database_user apollo-production"`
 
-cp sample-postgres-apollo-config.groovy apollo-config.groovy
+# edit sample-postgres-apollo-config.groovy with postgres ID and PASSWD
 
-./apollo deploy
+`cp sample-postgres-apollo-config.groovy apollo-config.groovy`
+
+`./apollo deploy`
 
 export PERL5LIB=/home/fgao/software/Apollo-2.5.0/extlib/lib/perl5:$PERL5LIB
 
