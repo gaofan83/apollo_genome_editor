@@ -23,9 +23,9 @@ sudo apt-get install ant openjdk-8-jdk
 #####
 `wget https://github.com/GMOD/Apollo/archive/2.6.0.tar.gz`
 #####
-`tar -xvzf 2.5.0.tar.gz`
+`tar -xvzf 2.6.0.tar.gz`
 #####
-`cd Apollo-2.5.0`
+`cd Apollo-2.6.0`
 
 # following command to test apollo
 `./apollo run-local`
