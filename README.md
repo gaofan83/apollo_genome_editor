@@ -21,7 +21,7 @@ sudo apt-get install ant openjdk-8-jdk
 #####
 `cd ~/software`
 #####
-`wget https://github.com/GMOD/Apollo/archive/2.5.0.tar.gz`
+`wget https://github.com/GMOD/Apollo/archive/2.6.0.tar.gz`
 #####
 `tar -xvzf 2.5.0.tar.gz`
 #####
