@@ -1,0 +1,61 @@
+## Apollo installation on bioinfo2pilm46.mit.edu
+
+## install java8 
+sudo apt-get install ant openjdk-8-jdk
+
+#change to root account with su command 
+#edit .bashrc and add the following
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=/usr/lib/jvm/java-8-openjdk-amd64/bin:$PATH
+
+## install grails 2.5.5?
+apt-get install curl
+curl -s https://get.sdkman.io | bash
+source "/home/fan1/.sdkman/bin/sdkman-init.sh"
+sdk install grails 2.5.5
+
+## install ant
+sudo apt update
+sudo apt install ant
+ant -version
+
+
+## install Tomcat9
+wget http://www.gtlib.gatech.edu/pub/apache/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz
+tar -xvzf apache-tomcat-9.0.34.tar.gz
+sudo mv apache-tomcat-9.0.34 /usr/share/
+sudo useradd -M -d /usr/share/apache-tomcat-9.0.34/ tomcat9
+sudo chown -R tomcat9 /usr/share/apache-tomcat-9.0.34/
+sudo passwd tomcat9
+#passwd: tomcat9
+
+#Edit the following files
+/usr/share/apache-tomcat-9.0.34/webapps/manager/META-INF/context.xml
+/usr/share/apache-tomcat-9.0.34/webapps/host-manager/META-INF/context.xml
+#modify alow line to add IP address
+allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1|18.7.125.60" />
+
+#Edit /usr/share/apache-tomcat-9.0.34/conf/tomcat-users.xml to secure admin access to tomcat UI
+#Add the following conent before /tomcat-users>
+<!-- manager section user role -->
+<role rolename="manager-gui" />
+<user username="manager" password="password123@" roles="manager-gui" />
+
+<!-- admin section user role -->
+<role rolename="admin-gui" />
+<user username="admin" password="Password123@" roles="manager-gui,admin-gui" />
+
+
+# Start Apache Tomcat service
+su - tomcat9 -c /usr/share/apache-tomcat-9.0.34/bin/startup.sh start
+#check process ID of part 8080
+sudo lsof -t -i:8080 
+#Now one should be able to visit http://bioinfo2pilm46.mit.edu:8080
+#now stop the process on Port 8080
+fuser -n tcp -k 8080
+
+# Prepare for Apollo installation
+sudo apt-get install zlib1g zlib1g-dev libexpat1-dev libpng-dev libgd-dev build-essential git software-properties-common python make
+sudo npm install -g yarn
+cd Apollo-2.6.0
+./apollo run-local
