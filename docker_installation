@@ -7,8 +7,8 @@ docker run -it -v /root/jbrowse/:/data -v /root/postgres/:/var/lib/postgresql -p
 
 # admin user and password: admin@local.host  password: (fgao user password)
 
-# Make the following directories somewhere with write permissions: postgres-data and jbrowse-data.
-# Copy your jbrowse data into jbrowse-data. We provide working sample data.
+# Make the following directories somewhere with write permissions: /root/postgres and /root/jbrowse.
+# Copy your jbrowse data into /root/jbrowse. We provide working sample data.
 # Run the docker-command: docker run -it -v /absolute/path/to/jbrowse-data:/data -v /absolute/path/to/postgres-data:/var/lib/postgresql -p 8888:8080 quay.io/gmod/apollo:latest
 # Login to the server at http://localhost:8888/
-# Add an organism per the instructions under Figure 2. Using yeast as an example, if you copy the data into jbrowse-data/yeast then on the server you'll add the directory: /data/yeast.
+# Add an organism. Using yeast as an example, if you copy the data into jbrowse/yeast then on the server you'll add the directory: /data/yeast.
