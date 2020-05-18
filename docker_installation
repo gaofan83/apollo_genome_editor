@@ -1,3 +1,6 @@
+#ubuntu 18.04 installation
+
+
 https://github.com/GMOD/Apollo/blob/develop/docs/Docker.md
 
 docker run -it -v /root/jbrowse/:/data -v /root/postgres/:/var/lib/postgresql -p 8888:8080 quay.io/gmod/apollo:latest      
