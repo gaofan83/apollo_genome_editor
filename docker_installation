@@ -12,3 +12,7 @@ docker run -it -v /root/jbrowse/:/data -v /root/postgres/:/var/lib/postgresql -p
 # Run the docker-command: docker run -it -v /absolute/path/to/jbrowse-data:/data -v /absolute/path/to/postgres-data:/var/lib/postgresql -p 8888:8080 quay.io/gmod/apollo:latest
 # Login to the server at http://localhost:8888/
 # Add an organism. Using yeast as an example, if you copy the data into jbrowse/yeast then on the server you'll add the directory: /data/yeast.
+
+
+# run docker from background
+docker run -d -it -v /root/jbrowse/:/data -v /root/postgres/:/var/lib/postgresql -p 8888:8080 quay.io/gmod/apollo:latest
