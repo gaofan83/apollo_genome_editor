@@ -16,3 +16,6 @@ docker run -it -v /root/jbrowse/:/data -v /root/postgres/:/var/lib/postgresql -p
 
 # run docker from background
 docker run -d -it -v /root/jbrowse/:/data -v /root/postgres/:/var/lib/postgresql -p 8888:8080 quay.io/gmod/apollo:latest
+
+# evolution apollo server
+http://131.215.78.39:8888/annotator/index
